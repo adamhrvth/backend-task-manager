@@ -15,7 +15,7 @@ const cors = require("cors");
 const app = express();
 
 app.use(cors({
-  origin: "https://adamhrvth-task-manager.netlify.app/",
+  origin: "https://adamhrvth-task-manager.netlify.app",
   credentials: true
 }));
 
