@@ -123,8 +123,7 @@ const getMe = async (req, res) => {
     return res.status(200).json({ "message": "User found.", "user": rest });
   }
   catch (err) {
-    console.log(err.message);
-    res.status(500).json({ "message": "Internal server error." });
+    res.status(500).json({ "message": "Internal server error: " + err.message });
   }
 };
 
@@ -158,8 +157,7 @@ const updateUser = async (req, res) => {
     return res.status(200).json({ "message": "User updated successfully.", "user": rest });
   }
   catch (err) {
-    console.log(err.message)
-    res.status(500).json({ "message": "Internal server error." });
+    res.status(500).json({ "message": "Internal server error: " + err.message });
   }
 };
 
@@ -189,8 +187,7 @@ const changePassword = async (req, res) => {
     return res.status(200).json({ "message": "Password updated successfully.", "user": rest });
   }
   catch (err) {
-    console.log(err.message)
-    res.status(500).json({ "message": "Internal server error." });
+    res.status(500).json({ "message": "Internal server error: " + err.message });
   }
 };
 
@@ -216,8 +213,7 @@ const deleteUser = async (req, res) => {
     res.status(201).json({ "message": "User removed successfully." });
   }
   catch (err) {
-    console.log(err.message);
-    res.status(500).json({ "message": "Internal server error." });
+    res.status(500).json({ "message": "Internal server error: " + err.message });
   }
 };
 

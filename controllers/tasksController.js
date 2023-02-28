@@ -20,8 +20,7 @@ const getTask = async (req, res) => {
     res.status(200).json({ "message": "Task found.", task });
   }
   catch (err) {
-    console.log(err.message);
-    res.status(500).send({ "message": "Internal server error." });
+    res.status(500).json({ "message": "Internal server error: " +  err.message});
   }
 };
 
@@ -33,8 +32,7 @@ const getAllTasks = async (req, res) => {
     res.status(200).json({ "message": "Tasks found.", tasks})
   }
   catch (err) {
-    console.log(err.message);
-    res.status(500).send({ "message": "Internal server error." });
+    res.status(500).json({ "message": "Internal server error: " + err.message});
   }
 };
 
@@ -53,8 +51,7 @@ const createTask = async (req, res) => {
     res.status(201).json({ "message": "Task created successfully.", task });
   }
   catch (err) {
-    console.log(err.message);
-    res.status(500).send({ "message": "Internal server error." });
+    res.status(500).json({ "message": "Internal server error: " + err.message });
   }
 };
 
@@ -83,8 +80,7 @@ const updateTask = async (req, res) => {
     res.status(200).json({ "message": "Task updated successfully." });
   }
   catch (err) {
-    console.error(err.message);
-    res.status(500).send({ "message": "Internal server error." });
+    res.status(500).json({ "message": "Internal server error: " + err.message });
   }
 };
 
@@ -108,8 +104,7 @@ const deleteTask = async (req, res) => {
     res.status(200).json({ "message": "Task deleted successfully." });
   }
   catch (err) {
-    console.error(err.message);
-    res.status(500).send({ "message": "Internal server error." });
+    res.status(500).json({ "message": "Internal server error: " + err.message });
   }
 };
 
